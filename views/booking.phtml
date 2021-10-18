@@ -1,0 +1,51 @@
+<main>
+    
+    <table>
+            <tr>
+            	<th>ID booking</th>
+                <th>Nombres de personnes</th>
+                <th>Date</th>
+                <th>Heure</th>
+                <th>Commentaire</th>
+                <th>Statut</th>
+                <th>Modifier</th>
+            </tr>
+            
+            <?php foreach($bookings as $booking): ?>
+            <tr>
+            	<td><?= $booking['id'] ?></td>
+                <td><?= $booking['number'] ?></td>
+                <td><?= $booking['date'] ?></td>
+                <td><?= $booking['hour'] ?></td>
+                <td><?= $booking['comment'] ?></td>
+                <td><?= $booking['statut'] ?></td>
+                <td><?= ($booking['statut']=="En cours")?"<a data-id='{$booking['id']}' class='modifBooking' href='#'>Modifier</a>":"" ?></td>
+            </tr>
+            <?php endforeach; ?>
+        </table> 
+    
+  <div class="resa"> 
+	<form method="post">
+	
+		<p>
+			<label for='nb'>Nombre de personnes</label>
+			<input type="number" name="nb" id="nb">
+		</p>
+		<p>
+			<label for='time'>Heure</label>
+			<input type="time" name="time" id="time">
+		</p>
+		<p>
+			<label for='date'>Date</label>
+			<input type="date" name="date" id="date">
+		</p>
+		<p>
+			<label for='comment'>Commentaire</label>
+			<input type="textarea" name="comment" id="comment">
+		</p>
+		
+		<button>Réserver</button>
+	</form>
+	</div> 
+</main>
+<script src="js/main.js"></script>

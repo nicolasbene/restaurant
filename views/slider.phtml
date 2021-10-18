@@ -1,0 +1,34 @@
+ <section>
+ <h2>Gestion des sliders</h2>
+    
+        <button><a href="index.php?page=createSlider">Ajouter un slider</a></button>
+    
+    
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>SRC</th>
+                <th>ALT</th>
+                <th>Published</th>
+                <th>Poids</th>
+                <th>Modifier</th>
+                <th>Supprimer</th>
+            </tr>
+            <?php foreach($sliders as $slider): ?>
+            <tr>
+                <td><?= $slider['id'] ?></td>
+                <td><?= $slider['src'] ?></td>
+                <td><?= $slider['alt'] ?></td>
+                <td><?= $slider['published'] ?></td>
+                <td><?= $slider['poids'] ?></td>
+                <td><button><a href="index.php?page=modifySlider&id=<?=$slider['id']?>"><i class="fas fa-pen-nib"></i></a></a></button></td>
+                <td><button class="confirmButton" data-url="<?= "index.php?page=deleteSlider&id=".$slider['id'] ?>"><a><i class="fas fa-trash-alt"></i></a></button></td>
+            </tr>
+            <?php endforeach; ?>
+        </table>
+    
+    </section>
+
+
+</main>
+    <script src="js/main.js"></script>

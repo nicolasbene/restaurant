@@ -1,0 +1,70 @@
+		<main class="container mixitup">
+		<h1>Details of our menus</h1>
+		<p class="select">Choose your main course according to your menu!</p>
+		<div class="filter">
+			<button data-filter="all">All</button>
+<!--			faire une boucle-->	
+			<?php foreach($categories as $categorie): ?>
+			<?php if($categorie['is_dish']==true): ?>
+		<button data-filter=".<?= $categorie['name']?>"><?= $categorie['name'] ?></button>
+			<?php endif; ?>   
+			<?php endforeach; ?>
+		</div> <!-- end of .filter --> 
+		
+		<div class="choice">
+		
+		<?php foreach($meals as $meal): ?>
+		<?php if($meal['is_dish']==true):?>
+			<div class="mix <?= $meal['categoryName'] ?>">
+				<figure>
+					<img src="<?= $meal['src'] ?>" alt="<?= $meal['alt'] ?>">
+					<figcaption><img src="img/fork-knife.svg" alt="">
+						<h3><?= $meal['name'] ?></h3>
+					</figcaption>
+				</figure>
+			</div>
+			<?php endif; ?> 
+			<?php endforeach; ?>
+		</div> <!-- end of .choice -->
+		
+		
+		
+		<?php foreach($categories as $categorie): ?>
+			<?php if($categorie['is_dish']==false): ?>
+			
+		<article>
+			<h2><?= $categorie['name'] ?></h2>
+			<p class="select"><?= $categorie['description'] ?></p>
+		
+			<div class="choice">
+				<?php foreach($meals as $meal): ?>
+				<?php if($meal['categoryName']==$categorie['name'] ):?>
+				<figure>
+					<img src="<?= $meal['src'] ?>" alt="<?= $meal['alt'] ?>">
+					<figcaption><img src="img/fork-knife.svg" alt="">
+						<h3><?= $meal['name'] ?></h3>
+					</figcaption>
+				</figure>
+				<?php endif; ?>  
+				<?php endforeach; ?>
+			</div> <!-- end of .choice -->
+			
+		</article>
+		<?php endif; ?> 
+			<?php endforeach; ?>
+			
+	
+	 
+	</main>
+	
+	<!-- Charger la bibliothèque de base de jQuery -->
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+	<!-- Charger le script du plugin -->
+	<script src="js/mixitup.min.js"></script>
+	<!-- Indiquer sur quel élément de la page on applique le plugin -->
+	<script>
+		var mixer = mixitup(".mixitup");
+	</script>
+</body>
+
+</html> 

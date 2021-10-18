@@ -1,0 +1,36 @@
+<section>
+ <h2>Gestion des menus</h2>
+    
+        <button><a href="index.php?page=createMenu">Ajouter un menu</a></button>
+    
+    
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Titre</th>
+                <th>Source</th>
+                <th>Alt</th>
+                <th>Prix</th>
+                <th>ID_Categorie</th>
+                <th>Modifier</th>
+                <th>Supprimer</th>
+            </tr>
+            <?php foreach($menus as $menu): ?>
+            <tr>
+                <td><?= $menu['id'] ?></td>
+                <td><?= $menu['title'] ?></td>
+                <td><?= $menu['src'] ?></td>
+                <td><?= $menu['alt'] ?></td>
+                <td><?= $menu['price'] ?></td>
+                <td><?= $menu['categoryName'] ?></td>
+                <td><button><a href="index.php?page=modifyMenu&id=<?=$menu['id']?>"><i class="fas fa-pen-nib"></i></a></a></button></td>
+                <td><button class="confirmButton" data-url="<?= "index.php?page=deleteMenu&id=".$menu['id'] ?>"><a><i class="fas fa-trash-alt"></i></a></button></td>
+            </tr>
+            <?php endforeach; ?>
+        </table>
+    
+    </section>
+
+
+</main>
+    <script src="js/main.js"></script>

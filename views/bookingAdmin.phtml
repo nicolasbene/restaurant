@@ -1,0 +1,33 @@
+<main>
+    
+    <table>
+            <tr>
+            	
+            	<th>Client ID</th>
+            	<th>Prénom</th>
+                <th>Nom</th>
+                <th>Nombres de personnes</th>
+                <th>Date</th>
+                <th>Heure</th>
+                <th>Commentaire</th>
+                <th>Statut</th>
+            </tr>
+            
+            <?php foreach($bookings as $booking): ?>
+            <tr>
+            	<td><?= $booking['id_user'] ?></td>
+            	<td><?= $booking['firstname'] ?></td>
+            	<td><?= $booking['lastname'] ?></td>
+                <td><?= $booking['number'] ?></td>
+                <td><?= $booking['date'] ?></td>
+                <td><?= $booking['hour'] ?></td>
+                <td><?= $booking['comment'] ?></td>
+                <td><?= $booking['statut'] ?></td>
+               <!-- <td><button><a href="index.php?page=modifyMeal&id=<?=$meal['id']?>"><i class="fas fa-pen-nib"></i></a></a></button></td>
+                <td><button class="confirmButton" data-url="<?= "index.php?page=deleteMeal&id=".$meal['id'] ?>"><a><i class="fas fa-trash-alt"></i></a></button></td>-->
+            </tr>
+            <?php endforeach; ?>
+        </table> 
+  
+</main>
+   <script src="js/main.js"></script>

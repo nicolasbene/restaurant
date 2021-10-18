@@ -1,0 +1,40 @@
+<main>
+
+<h3>Modifier un plat</h3>
+    
+    <form method="post" enctype="multipart/form-data"> 
+    	<p>
+		   <label for='category'>Catégorie</label>
+			<select name="category" id="category">
+			    <option value="<?= $menu['categoryId'] ?>"><?= $menu['categoryName'] ?></option>
+			    <?php foreach($categories as $categorie): ?>
+                <option value="<?= $categorie['id'] ?>"><?= htmlspecialchars($categorie['name']) ?></option>
+                <?php endforeach; ?>
+            </select>
+            </p>
+		<p>
+  
+		<p>
+			<label for="title">Nom du menu</label>
+			<input type="text" name="title" id="title" value="<?= $menu['title'] ?>"/>
+		</p>
+		<p>
+			<label for="img">Image</label>
+			<input type="file" name="img" id="img"/>
+			<input type="hidden" name="imgBdd" id="imgBdd" value="<?= $menu['src'] ?>"/>
+			
+		</p>
+		<p>	
+			<label for="alt">Alt</label> 
+			<input type="alt" name="alt" id="alt" value="<?= $menu['alt'] ?>"/>
+		</p>
+	<p>	
+			<label for="price">Prix</label>
+			<input type="text" name="price" id="price" value="<?= $menu['price'] ?>"/>
+		</p>
+
+			<button type="submit">Enregistrer</button>
+			 
+	</form>
+	
+</mai

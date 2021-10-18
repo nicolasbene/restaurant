@@ -1,0 +1,19 @@
+# activation de la réécriture d'urls
+Options +FollowSymlinks
+RewriteEngine on
+
+
+# un commentaire
+RewriteRule ^admin$  index.php?page=admin [L]
+RewriteRule ^menu$  index.php?page=menu [L]
+RewriteRule ^meal$  index.php?page=meal [L]
+RewriteRule ^about$  index.php?page=about [L]
+RewriteRule ^connexion$  index.php?page=connexion [L]
+RewriteRule ^newUser$  index.php?page=newUser [L]
+RewriteRule ^booking$  index.php?page=booking [L]
+RewriteRule ^resa$  index.php?page=resa [L]
+RewriteRule ^contact$  index.php?page=contact [L]
+RewriteRule ^dashboard$  index.php?page=tableauDeBord [L]
+RewriteRule ^accueil$  index.php [L]
+RewriteRule ^modifyAccueil$  index.php?page=modifyAccueil [L]
+RewriteRule ^slider$  index.php?page=slider [L]

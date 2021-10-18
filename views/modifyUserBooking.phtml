@@ -1,0 +1,22 @@
+	<form method="post">
+	
+		<p>
+			<label for='nb'>Nombre de personnes</label>
+			<input type="number" name="nb" id="nb" value="<?= $userBooking['number'] ?>">
+			<input type="hidden" name="id" id="id" value="<?= $userBooking['id'] ?>">
+		</p>
+		<p>
+			<label for='time'>Heure</label>
+			<input type="time" name="time" id="time" value="<?= $userBooking['hour'] ?>">
+		</p>
+		<p>
+			<label for='date'>Date</label>
+			<input type="date" name="date" id="date" value="<?= $userBooking['date'] ?>">
+		</p>
+		<p>
+			<label for='comment'>Commentaire</label>
+			<input type="textarea" name="comment" id="comment" value="<?= $userBooking['comment'] ?>">
+		</p>
+		
+		<button name="modifier">Modifier</button>
+	</form>

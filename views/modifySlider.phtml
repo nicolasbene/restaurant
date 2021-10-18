@@ -1,0 +1,27 @@
+<main>
+
+<h3>Modifier le slider</h3>
+    
+    <form method="post" enctype="multipart/form-data"> 
+  
+		<p>
+			<label for='alt'>ALT</label>
+			<input type="text" name="alt" id="alt" value="<?= $slider['alt'] ?>">
+		</p>
+		<p>
+			<label for='published'>Published ?</label>
+			<input type="checkbox" name="published" id="published" value="<?= $slider['published'] ?>">
+		</p>
+		<p>
+			<label for='poids'>Poids</label>
+			<input type="number" name="poids" id="poids" value="<?= $slider['poids'] ?>"/>
+		</p>
+		<p>
+			<label for='image'>Image</label>
+			<input type="file" name="image" id="image"/>
+			<input type="hidden" name="imageBdd" id="imageBdd" value="<?= $slider['src'] ?>"/>
+		</p>
+		<button type="submit">Enregistrer</button>
+	</form>
+	
+</main>

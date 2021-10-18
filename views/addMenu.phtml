@@ -1,0 +1,32 @@
+	<h1>Ajout d'un menu</h1>
+	<!-- sipas d'attribut action, par défaut, la soumission du formulaire fait un rechargement de la même page-->
+	<form method="post" enctype="multipart/form-data">
+	    <p>
+		    <label for='category'>Catégorie</label>
+			<select name="category" id="category">
+			    <option value="">--Please choose an option--</option>
+			    <?php foreach($categories as $categorie): ?>
+                <option value="<?= $categorie['id'] ?>"><?= htmlspecialchars($categorie['name']) ?></option>
+                <?php endforeach; ?>
+            </select>
+        </p>
+		<p>
+			<label for='title'>Titre du menu</label>
+			<input type="text" name="title" id="title">
+		</p>
+		<p>
+			<label for="img">Image</label>
+			<input type="file" name="img" id="img"/>
+		</p>
+		<p>	
+			<label for="alt">Alt</label>
+			<input type="text" name="alt" id="alt"/>
+		</p>
+		<p>	
+			<label for="price">Prix</label>
+			<input type="text" name="price" id="price"/>
+		</p>
+		
+		
+		<button type="submit">Enregistrer</button>
+	</form>
